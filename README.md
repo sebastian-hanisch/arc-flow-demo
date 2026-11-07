@@ -1,7 +1,6 @@
 # Arc-Flow: der Graph statt der Muster – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-arc-flow-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-arc-flow-demo.streamlit.app/)**
 
 Stück 5 (gelb) der Konzepte-Reihe **„Packen: Reihenfolge und Platzierungsregel“** für die Website „Sebastian Hanisch – Operations Research und Machine Learning“ (ein Verfahren mit wachsendem Beispiel: eine Packung entsteht aus einer Reihenfolge der Teile und einer Regel, wohin das nächste kommt; der zweite Faden ist die Schranke). Stück 2 und 4 haben mit den Schranken L1, L2 und dem LP gefragt, ob FFD optimal ist. Diese Demo liefert das **Optimum selbst**: mit dem Arc-Flow-Modell, einem Fluss in einem Graphen über die Lasten 0 bis C, und fragt, wie klein die **Graphkompression** den Graphen macht und wie oft das Optimum damit bestimmbar ist.
 
