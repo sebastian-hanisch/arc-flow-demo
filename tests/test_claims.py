@@ -153,7 +153,7 @@ def test_alle_900_instanzen_sind_entschieden_und_die_acht_von_stueck_4_verlieren
     z = alle()
     assert sum(x["entschieden"] for x in z.values()) == 900 and sum(x["offen"] for x in z.values()) == 0
     assert all(max(_opt(*k)) > 0 and min(_opt(*k)) > 0 for k in z)
-    assert "entscheidet **alle 900** Rasterinstanzen im Zeitlimit von 60 Sekunden" in README
+    assert "entscheidet **alle 900** Rasterinstanzen im Zeitlimit von 60 Sekunden (auf dem Rechner des Autors" in README
     assert sum(len(v) for v in C.STUECK4_OFFEN.values()) == 8 and {k: len(v) for k, v in C.STUECK4_OFFEN.items()} == {"mittel|30": 7, "breit|30": 1}
     for schl, positionen in C.STUECK4_OFFEN.items():
         zelle = ev.vorberechnet()["zellen"][schl]
@@ -183,7 +183,7 @@ def test_groesse_des_graphen_in_der_readme():
     ordnung = [round(100 * x["bogen"][2] / x["bogen"][1]) for x in z.values()]
     assert (min(ordnung), max(ordnung)) == (38, 67)
     assert all(x["knoten"][1] == x["knoten"][2] for x in z.values())
-    assert "Die Stufe geordnet behält **2 bis 20 %** der Bögen und **5 bis 63 %** der Knoten des vollen Graphen (Kapazität 1000); die Ordnung der Größen behält 38 bis 67 % der Bögen der Stufe normal" in README
+    assert "Im Mittel über die 100 Instanzen einer Zelle behält die Stufe geordnet **2 bis 20 %** der Bögen und **5 bis 63 %** der Knoten des vollen Graphen (Kapazität 1000; einzelne Instanzen 0,5 bis 33 % und 1 bis 91 %); die Ordnung der Größen behält 38 bis 67 % der Bögen der Stufe normal" in README
     assert (round(z[(1, 0)]["bogen_anteil"]), round(z[(1, 0)]["knoten_anteil"])) == (2, 5) and (round(z[(0, 2)]["bogen_anteil"]), round(z[(0, 2)]["knoten_anteil"])) == (20, 63)
     assert (round(z[(2, 2)]["bogen_anteil"]), round(z[(2, 2)]["knoten_anteil"])) == (17, 63) and max(anteile) == round(z[(0, 2)]["bogen_anteil"]) and min(anteile) == round(z[(1, 0)]["bogen_anteil"])
     assert "Am stärksten bei großen Teilen mit 12 Paketen (2 % der Bögen, 5 % der Knoten), am schwächsten bei mittleren Teilen mit 30 Paketen (20 % der Bögen, 63 % der Knoten; breit gestreute Teile mit 30 Paketen ähnlich: 17 % und 63 %)" in README

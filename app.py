@@ -173,7 +173,7 @@ for zz in zeilen:
     k = zz["lp"]
     tab3.append(f"| {zz['n']} | {k['rund_s2_opt']} von {zz['entschieden']} | {k['rund_s1_opt']} | {k['rund_item_opt']} | {k['s1_kleiner_s2']} |")
 st.markdown("\n".join(tab3))
-st.caption("Zahl der entschiedenen Instanzen, in denen der aufgerundete LP-Wert genau das Optimum ist. Die letzte Spalte zählt die Instanzen, in denen der LP-Wert der Stufe geordnet größer ist als der der Stufe normal. Die Stufe voll ist im Raster nicht gerechnet: Ihr LP hat bei Kapazität 1000 bis zu 20 000 Bögen.")
+st.caption("Zahl der entschiedenen Instanzen, in denen der aufgerundete LP-Wert genau das Optimum ist. Die letzte Spalte zählt die Instanzen, in denen der LP-Wert der Stufe geordnet größer ist als der der Stufe normal. Die Stufe voll ist im Raster nicht gerechnet: Ihr LP hat bei Kapazität 1000 und 30 Paketen rund 20 000 bis 23 000 Bögen.")
 
 st.markdown("---")
 
@@ -184,7 +184,7 @@ st.markdown(
     """
 | Annahme | Was passiert, wenn sie verletzt ist |
 |---|---|
-| **Kleine Paketzahlen, große Kapazität** | Die Kompression wirkt, solange die Lasten als Summen von Paketen dünn liegen. Bei sehr vielen verschiedenen Größen füllen die Summen fast alle Lasten, und die Stufe normal spart wenig (Experiment 1). |
+| **Kleine Paketzahlen, große Kapazität** | Die Kompression wirkt, solange die Lasten als Summen von Paketen dünn liegen. Bei vielen verschiedenen Größen füllen die Summen einen wachsenden Teil der Lasten (63 % bei 30 mittleren Paketen), und die Stufe normal spart weniger (Experiment 1). |
 | **Das Optimum steht im Zeitlimit** | Das ganzzahlige Programm hat 60 Sekunden je Instanz; was darüber liegt, ist „nicht entschieden“. Die Zahl hängt von der Rechenzeit ab. |
 | **Die Messung gilt für diese Instanzen** | Drei Verteilungen, Paketzahlen 12 bis 30, Kapazität 1000. Andere Verteilungen oder viel größere Instanzen können anders ausfallen. |
 | **Nur FFD zum Vergleich** | Bessere Heuristiken können öfter optimal sein; die Demo misst sie nicht. |

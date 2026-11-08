@@ -135,7 +135,7 @@ def instanz_code(ffd_zahl: int, schranke_l1: int, schranke_l2: int, lp_zahl: int
 
 def instanz_werte(inst: Instance, opt: int, lp_item_fn=None) -> dict:
     """Alle Zahlen einer Rasterinstanz (ganze Zahlen und Zeichen, damit der Vergleich exakt ist). `opt` ist das Optimum (-1 = nicht entschieden), `lp_item_fn(sizes, cap)` der LP von Stück 4.
-    Der LP der Stufe voll wird im Raster nicht gerechnet: Bei Kapazität 1000 hat er bis zu 20 000 Bögen und braucht Sekunden bis Minuten je Instanz."""
+    Der LP der Stufe voll wird im Raster nicht gerechnet: Bei Kapazität 1000 hat er bei 30 Paketen rund 20 000 bis 23 000 Bögen und braucht Sekunden bis Minuten je Instanz."""
     if lp_item_fn is None:
         from dev.cg import lp_wert_cg as lp_item_fn
     sizes, cap = list(inst.sizes), inst.cap
